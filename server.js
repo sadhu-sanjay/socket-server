@@ -58,7 +58,7 @@ function startSendingRandomNumbers() {
 		const randomNumber = Math.floor(Math.random() * (7000 - 700 + 1) + 700);
 		console.log(`Sending ${randomNumber}`);
 		sendToClients(randomNumber);
-	}, 4000);
+	}, 2000);
 }
 
 
