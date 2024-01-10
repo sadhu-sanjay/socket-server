@@ -7,7 +7,6 @@ import { PORT } from './config/config.js';
 const app = express();
 const port = PORT
 
-
 app.use(cors());
 
 const clients = {};
