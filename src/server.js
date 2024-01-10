@@ -1,11 +1,12 @@
 import cors from 'cors';
 import express from 'express';
-import { executeQuery } from './db.js';
+import { executeQuery } from './config/db.js';
 import { log } from 'console';
-
+import { PORT } from './config/config.js';
 
 const app = express();
-const port = 8080;
+const port = PORT
+
 
 app.use(cors());
 
@@ -36,7 +37,7 @@ function sendToClients(data) {
 // send a random number every 2 seconds to the client 
 // send this number to all the clients connected to the server
 app.get('/ping', (req, res) => {
-	console.log(`Sending ${randomNumber}`);
+	console.log(`SendingHello `);
 	sendToClients('ping', "Hello")
 	res.status(200).send('OK');
 })
@@ -58,7 +59,7 @@ function startSendingRandomNumbers() {
 		const randomNumber = Math.floor(Math.random() * (7000 - 700 + 1) + 700);
 		console.log(`Sending ${randomNumber}`);
 		sendToClients(randomNumber);
-	}, 2000);
+	}, 5000);
 }
 
 

@@ -7,7 +7,6 @@ import { MYSQL_DATABASE, MYSQL_HOST, MYSQL_PASSWORD, MYSQL_USER } from './config
 let pool;
 
 try {
-    console.log("Connecting to SQL", MYSQL_DATABASE, MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD)
     pool = mysql.createPool({
         connectionLimit: 10,
         host: MYSQL_HOST,
