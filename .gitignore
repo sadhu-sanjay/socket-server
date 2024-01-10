@@ -1,1 +1,10 @@
 /node_modules
+/src/keys
+
+# Install dependencies
+
+.DS_Store
+
+.env
+.env.*
+

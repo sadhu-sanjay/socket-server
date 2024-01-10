@@ -37,7 +37,7 @@ function sendToClients(data) {
 // send this number to all the clients connected to the server
 app.get('/ping', (req, res) => {
 	console.log(`SendingHello `);
-	sendToClients('ping', "Hello")
+	sendToClients("HELLO")
 	res.status(200).send('OK');
 })
 
