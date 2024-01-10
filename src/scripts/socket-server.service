@@ -1,0 +1,18 @@
+[Unit]
+Description=Socket Server
+
+[Service]
+User=ec2-user
+WorkingDirectory=/home/ec2-user/socket-server
+ExecStart=/usr/bin/node /home/ec2-user/socket-server/src/server.js
+# optional items below
+Restart=always
+RestartSec=3
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=socket-server
+Environment=NODE_ENV=production
+
+
+[Install]
+WantedBy=multi-user.target
